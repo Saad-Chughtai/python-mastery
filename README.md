@@ -35,5 +35,5 @@ Follow these steps to get a local copy running:
 ## Topics Covered
 
 ### 1. Python Basics
-- Variables, data types
-
+- Variables, data types and operators
+- Data collections (Lists,Tuples,Sets)
