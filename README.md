@@ -37,3 +37,4 @@ Follow these steps to get a local copy running:
 ### 1. Python Basics
 - Variables, data types and operators
 - Data collections (Lists,Tuples,Sets,Dictionaries)
+- Control flow (conditionals, loops)
