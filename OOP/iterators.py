@@ -119,6 +119,8 @@ StopIteration:
     3.In the __next__() method, we can add a terminating condition to raise an error if the iteration is done a specified number of times:
 """
 
+# Custom iterator
+
 class my_numbers:
     def __iter__(self):
         self.a = 1        # Starting value
@@ -153,3 +155,103 @@ Output:
 10
 """
 
+# Function to print the Even number
+
+class num:
+    def __iter__(self):
+        self.a = 0         # Starting value
+        return self
+    def __next__(self):
+        if self.a <= 20:   # Condition to meet
+            x = self.a
+            self.a +=2     # Value of iteration
+            return x
+        else:
+            raise StopIteration
+        
+var = num()
+myiter = iter(var)
+for x in myiter:
+    print(x)
+
+"""
+Output:
+
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+"""
+
+# Iterator for Custom String Traversal
+
+class StringIterator:
+    def __init__(self,text):
+        self.text = text
+        self.index = 0                       # Starts from 0 index
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.index < len(self.text):     # Condition to meet
+            x = self.text[self.index]
+            self.index += 1                 # Iteration to move
+            return x
+        else:
+            raise StopIteration
+        
+val = StringIterator("Hello")
+myiter = iter(val)
+for char in myiter:
+    print(char)
+
+"""
+Output:
+H
+e
+l
+l
+o
+"""
+
+# Reverse Iterator
+
+class Reverse:
+    def __init__(self,seq):
+        self.seq = seq
+        self.index = len(seq)
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.index > 0:
+            self.index -= 1
+            return self.seq [self.index]
+        
+        else:
+            raise StopIteration
+        
+val = Reverse([1,2,3,4,5,6,7,8])
+myiter = iter(val)
+for x in myiter:
+    print(x)
+
+"""
+Output:
+8
+7
+6
+5
+4
+3
+2
+1
+"""
